@@ -36,7 +36,22 @@
 
 
 <style>
-    
+@font-face {
+  font-family: StagSans;
+  font-display: swap;
+  src: url("fonts/StagSansRegular/StagSansRegular.woff2") format("woff2");
+  src: url("fonts/StagSansRegular/StagSansRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: StagSans;
+  font-display: swap;
+  src: url("fonts/StagSansMedium/StagSansMedium.woff2") format("woff2");
+  src: url("fonts/StagSansMedium/StagSansMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
 .contain {
   max-width: 1250px;
   padding: 0 50px;
@@ -62,6 +77,8 @@
   color: #fff;
   justify-content: center;
   display: flex;
+  font-family: 'StagSans', sans-serif;
+  /* font-family: sans-serif; */
 }
 .wrapperBlock * {
   box-sizing: border-box;
@@ -169,7 +186,7 @@
 
 .topAlert {
   font-size: 10px;
-  padding: 2.4em;
+  padding: 2.4em  0;
   text-align: center;
   background-color: #131E36;
   flex: 0 0 auto;
@@ -213,7 +230,7 @@
 }
 
 .mainTitle {
-  font-size: clamp(3em, (1vw + 1vh) * 2, 5.6em);
+  font-size: clamp(2.5em, (1vw + 1vh) * 2, 5.6em);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -303,7 +320,7 @@
     padding-bottom: 0;
   }
   .mainDouble__img {
-    margin-top: 3em;
+    /* margin-top: 3em; */
     order: 2;
     margin-left: auto;
     margin-right: auto;
@@ -317,6 +334,25 @@
   .logoMain {
     margin-left: auto;
     margin-right: auto;
+    font-size: .8em;
+  }
+  .counterDay{
+    margin-top: 2em !important;
+  }
+  .counterDay__num span{
+    font-size: clamp(3em, (1vw + 1vh) * 3, 6em);
+  }
+  ._mt20{
+    margin-top: 15px !important;
+  }
+  ._mt15{
+    margin-top: 10px !important;
+  }
+  .bottomDecore{
+    height: 26%;
+  }
+  .topAlert p{
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 576.98px) {
