@@ -58,6 +58,16 @@
   margin: 0 auto;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'StagSans', sans-serif;
+  /* font-family: sans-serif; */
+  font-size: 10px;
+  line-height: 1.3;
+  color: #fff;
+}
+
 .wrapperBlock {
   min-height: 100vh;
   margin: 0 auto;
@@ -172,7 +182,7 @@
 
 #header {
   font-size: 10px;
-  padding: 2em 0;
+  padding: clamp(.5em,  calc(1vw + 1vh) * .5, 2em) 0;
   background-color: rgba(0, 0, 0, 0.1);
   flex: 0 0 auto;
 }
@@ -182,6 +192,7 @@
   width: 15em;
   height: 4.7em;
   display: block;
+  font-size: clamp(.5em,  calc(1vw + 1vh) * .3, 1em);
 }
 
 .topAlert {
@@ -201,7 +212,9 @@
   flex-direction: column;
   height: 100%;
   flex: 1;
-  padding-bottom: 10%;
+  justify-content: center;
+  /* padding-bottom: 10%; */
+  padding-bottom: clamp(10px, calc(1vw + 1vh) * 5.6, 200px);
 }
 
 .mainDouble {
@@ -215,22 +228,22 @@
   min-width: 84em;
   height: 85em;
   font-size: 0.7em;
-  font-size: clamp(0.1em, (1vw + 1vh) * 0.25, 0.7em);
+  font-size: clamp(0.1em, (1vw + 1vh) * 0.19, 0.7em);
 }
 .mainDouble__img img {
-  transform: scale(1.3) translate(0, 10%);
+  transform: scale(1.3) translate(0, 15%);
 }
 
 .mainDouble__content {
   text-align: center;
-  padding-bottom: 10em;
+  /* padding-bottom: 10em; */
   position: relative;
   z-index: 1;
   padding-top: 15px;
 }
 
 .mainTitle {
-  font-size: clamp(2.5em, (1vw + 1vh) * 2, 5.6em);
+  font-size: clamp(2.5em, (1vw + 1vh) * 1.5, 5.6em);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -268,7 +281,7 @@
   letter-spacing: -0.2em;
 }
 .counterDay__num span {
-  font-size: 8em;
+  font-size: clamp(1em, calc(1vw + 1vh)* 2, 8em);
   font-weight: 500;
 }
 
@@ -283,7 +296,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 20%;
+  height: 22%;
   z-index: -1;
   min-width: 1000px;
   left: 50%;
@@ -304,9 +317,6 @@
   .mainDouble {
     align-items: flex-start;
   }
-  .mainDouble__content {
-    padding-bottom: 20em;
-  }
   .mainDouble__img img {
     transform: scale(1.3) translateY(20%);
   }
@@ -314,6 +324,9 @@
 @media only screen and (max-width: 991.98px) {
   .mainDouble {
     flex-wrap: wrap;
+  }
+  .sectionMain{
+    padding-bottom: 0;
   }
   .mainDouble__content {
     order: 1;
@@ -324,7 +337,7 @@
     order: 2;
     margin-left: auto;
     margin-right: auto;
-    font-size: clamp(0.1em, (1vw + 1vh) * 0.35, 2em);
+    font-size: clamp(0.1em, calc(1vw + 1vh) * 0.35, 2em);
     min-width: 0;
     margin-bottom: 5em;
   }
@@ -334,16 +347,16 @@
   .logoMain {
     margin-left: auto;
     margin-right: auto;
-    font-size: .8em;
+    /* font-size: .8em; */
   }
   .counterDay{
     margin-top: 2em !important;
   }
   .counterDay__num span{
-    font-size: clamp(3em, (1vw + 1vh) * 3, 6em);
+    font-size: clamp(2em, (1vw + 1vh) * 3, 6em);
   }
   ._mt20{
-    margin-top: 15px !important;
+    margin-top: 10px !important;
   }
   ._mt15{
     margin-top: 10px !important;
@@ -354,21 +367,65 @@
   .topAlert p{
     font-size: 14px;
   }
+  .mainTitle{
+    font-size: 18px;
+  }
+  .button_1{
+    font-size: 1.2em;
+  }
 }
 @media only screen and (max-width: 576.98px) {
+  .contain{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .mainDouble__img {
     font-size: 1em;
-    width: 100%;
+    margin-top: -2em;
+    pointer-events: none;
+    /* width: 100%;
     height: auto;
-    padding-bottom: 100%;
+    padding-bottom: 100%; */
+    font-size: clamp(0.01em, calc(1vw + 1vh) * 0.25, 2em);
   }
-  .contain {
-    padding-left: 30px;
-    padding-right: 30px;
+  .button_1{
+    padding-left: 10px;
+    padding-right: 10px;
   }
-  .sectionMain{
-    margin-bottom: -15%;
+  .mainDouble__content ._fz16 br{
+    display: none;
   }
+  .logoMain{
+    font-size: 0.6em;
+  }
+  .topAlert{
+    padding: 10px 0;
+  }
+  .topAlert p{
+    font-size: 12px;
+  }
+  #header{
+    padding: 10px 0;
+  }
+  .counterDay__text{
+    font-size: 16px;
+  }
+  .counterDay{
+    margin-top: 10px !important;
+  }
+  ._fz16{
+    font-size: 12px;
+  }
+  .footerText{
+    font-size: 12px;
+  }
+  ._mt20{
+    margin-top: 5px !important;
+  }
+  ._mt15{
+    margin-top: 5px !important;
+  }
+
 }
 @media only screen and (max-width: 399.98px) {
   .bottomDecore{
